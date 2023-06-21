@@ -1,0 +1,46 @@
+.book-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.delete-button {
+  background-color: lightgray;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+.book-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-form-input {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.book-form-input-field {
+  background-color: skyblue;
+}
+
+.book-form-submit {
+  background-color: skyblue;
+}

@@ -1,0 +1,54 @@
+여기서는 react랑 node를 설치해서 프론트엔드(요청)와 백엔드(프론트앤드의 요청을 받고 작동하기)를 만들고 이것을 연결해 주는것을 배운다. 
+
+1. <백엔드 설치> 
+1) npm init -y
+2) index.js
+3) routes 폴더 만들기
+4) npm i express
+4) package.json에     "start": "node index.js" 
+5) 노드몬설치: npm i --save-dev nodemon 
+4) package.json에     "dev": "node index.js" 
+4) 설치된 노드몬을 한번 더 터미널에 불러서실행: npm run dev 
+(이렇게하면 내가 실행한걸 이제 nodemon이 읽고 계속 업데이트해준다. )
+
+-index.js에 있던 put, get..이런걸 routes폴더로 하나씩 이쁘게 정리해준다. 
+- 첫번재로는 routes폴더에 iuser.js를만듬  그리고 index.랑 수출수입 (userRouter)
+- 두번째로는 routes폴더에 posts.js를 만듬 르기로 index랑 수출수입 (postRouter)
+
+- 404로 없는 페이지 만들기  (index.js에서씀)
+
+- 각각이 순서가 중요함  
+
+-index.js, posts.js, users.js는 백엔드 파트였음 
+
+
+2. <프론트엔드 설치> 
+아래 순서대로 새로운터미널에서 실행하기: 
+터미널에서 npm init vite 작명
+react 선택
+javascrip선택
+cd 작명
+npm install 
+npm install axios
+npm run dev  -> 이렇게 치면 localhost:5173 이 나온다. 
+우리는 이제, 
+앞서 만든 백엔드 lcoal:3001에 이것을 연결하고싶다.  !
+
+어쨋든, 
+우리는 app.jsx에 axios를 import..하고 한당.  (백엔드에서 작성한 값을 불러오는 용도로 axios 를쓴다. )
+
+- 이제 CORS를 설치할때이다. (위에 3001과 5173처럼 서로다른 도메인인은 서로 밀어내기 때문에 이걸해야함 )
+
+
+
+3. <백엔드에서 CORS를 설치하기> 
+-index.js가 있는 터미널에서: npm i cors 
+-index.js에서 const cors =  require("cors")  등.. 작성 
+
+
+- 이제 express.json을 지정해주면서 값을 json으로 교환할수 있게 한다. 
+(지금은 실질적인 routes가 없이 때문에 이걸)
+
+
+
+4. 중요한점은 우리는 고객에게 프론트엔드를 보여주는것이다. 백엔드는 정보를 가지고 있는것이니, 이것을 혼동하지말것. 우리가 일반적으로 쓰는 프론트엔드의 routes는 필요할것이니 쓰면된다. 
